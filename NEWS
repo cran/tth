@@ -1,3 +1,9 @@
+Changes in Version 4.3-1
+
+  o The argument "L" in tth.control() can now also be a character
+    for the base file (no extension) for LaTeX auxiliary input.
+
+
 Changes in Version 4.03-0
 
   o First CRAN release of R package "tth" with wrappers to the

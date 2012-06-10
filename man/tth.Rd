@@ -24,7 +24,7 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
   \item{Sweave}{logical. Should the Sweave code environments Sinput/Soutput be
     replaced by verabtim (and Schunk deleted) prior to conversion with \code{tth}/\code{ttm}?}
   \item{\dots}{arguments passed to \code{tth.control}.}
-  \item{a}{logicalm attempt automatic picture environment conversion
+  \item{a}{logical. Attempt automatic picture environment conversion
     using \code{latex2gif}? Default omit.}
   \item{c}{logical. Prefix header \code{"Content-type: text/HTML"} (for direct web serving)?}
   \item{d}{logical. Disable definitions with delimited arguments? Default enable.}
@@ -37,7 +37,9 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
   \item{i}{logical. Use italic font for equations (like TeX)? Default roman.
     For \code{tth} only.}
   \item{j}{numeric specifying index page length. Default is 20 lines.}
-  \item{L}{logical. Should LaTeX commands (e.g., frac) be enabled without a docmentclass line?}
+  \item{L}{logical or character. If logical: Should LaTeX commands (e.g., frac) be enabled
+    without a docmentclass line? If character: The base file (no extension) for LaTeX
+    auxiliary input.}
   \item{n}{numeric HTML title format control: \code{0} raw, \code{1} expand macros, \code{2} expand
     equations.}
   \item{p}{character specifying additional directories (paths) to search for input files.}
@@ -75,7 +77,7 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
 }
 
 \examples{
-tex <- c("This is \\textbf{bold} and this \\textit{italic}.",
+tex <- c("This is \\\\textbf{bold} and this \\\\textit{italic}.",
   "Points on the unit circle: $x^2 + y^2 = 1$.")
 tth(tex)
 ttm(tex)

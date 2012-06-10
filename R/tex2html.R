@@ -1,15 +1,25 @@
-
-tth.control <- function(a = FALSE, c = FALSE, d = FALSE, e = 2, f =
-  NULL, g = FALSE, i = FALSE, j = NULL, L = TRUE, n = NULL, p = NULL,
-  r = TRUE, t = FALSE, u = FALSE, w = NULL, y = 2, xmakeindxcmd =
-  NULL, v = FALSE)
+tth.control <- function(a = FALSE, c = FALSE, d = FALSE, e = 2,
+  f = NULL, g = FALSE, i = FALSE, j = NULL, L = TRUE, n = NULL,
+  p = NULL, r = TRUE, t = FALSE, u = FALSE, w = NULL, y = 2,
+  xmakeindxcmd = NULL, v = FALSE)
 {
-    ## collect all arguments
-    rval <- list(a = a, c = c, d = d, e = e, f = f, g = g, i = i,
-                 j = j, L = L, n = n, p = p, r = r, t = t, u = u,
-                 w = w, y = y, xmakeindxcmd = xmakeindxcmd, v = v)
+  ## collect all arguments
+  rval <- list(a = a, c = c, d = d, e = e, f = f, g = g, i = i,
+    j = j, L = L, n = n, p = p, r = r, t = t, u = u, w = w, y = y,
+    xmakeindxcmd = xmakeindxcmd, v = v)
+
+  ## argument types
+  args_logical <- c("a", "c", "d", "g", "i", "r", "t", "u", "v", "V")
+  args_numeric <- c("e", "f", "j", "n", "w", "y")
+  args_character <- c("p", "xmakeindxcmd")
 
   ## sanity checking depending on type
+  if(is.character(rval[["L"]])) {
+    args_character <- c(args_character, "L")
+  } else {
+    rval[["L"]] <- as.logical(rval[["L"]])
+    args_logical <- c(args_logical, "L")
+  }
   if(!is.null(rval[["v"]])) {
     if(is.numeric(rval[["v"]])) {
       if(rval[["v"]] > 1L) {
@@ -21,7 +31,9 @@ tth.control <- function(a = FALSE, c = FALSE, d = FALSE, e = 2, f =
       }
     }
   }
-  for(i in c("a", "c", "d", "g", "i", "L", "r", "t", "u", "v", "V")) {
+  
+  ## process arguments
+  for(i in args_logical) {
     if(!is.null(rval[[i]])) {
       if(!is.logical(rval[[i]]) | length(rval[[i]]) != 1L) {
         warning(sprintf("argument %s needs to be a single logical, changed to default", i))
@@ -29,7 +41,7 @@ tth.control <- function(a = FALSE, c = FALSE, d = FALSE, e = 2, f =
       }
     }
   }
-  for(i in c("e", "f", "j", "n", "w", "y")) {
+  for(i in args_numeric) {
     if(!is.null(rval[[i]])) {
       if(!(is.numeric(rval[[i]]) | is.logical(rval[[i]])) | length(rval[[i]]) != 1L) {
         warning(sprintf("argument %s needs to be a single numeric, changed to default", i))
@@ -37,10 +49,10 @@ tth.control <- function(a = FALSE, c = FALSE, d = FALSE, e = 2, f =
       }
     }
   }
-  for(i in c("p", "xmakeindxcmd")) {
+  for(i in args_character) {
     if(!is.null(rval[[i]])) {
       if(!is.character(rval[[i]]) | length(rval[[i]]) != 1L) {
-        warning(sprintf("argument %s needs to be a single character, changed to default", i))
+        warning(sprintf("argument %s needs to be a single character string, changed to default", i))
 	rval[[i]] <- NULL
       }
     }
