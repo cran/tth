@@ -1,0 +1,9 @@
+Changes in Version 4.03-0
+
+  o First CRAN release of R package "tth" with wrappers to the
+    TeX-to-HTML converter tth() and the TeX-to-HTML/MathML
+    converter ttm() from the TtH project of Ian H. Hutchinson,
+    see http://hutchinson.belmont.ma.us/tth/.
+    
+  o Both C code and R wrappers are distributed under the GPL-2,
+    see the README file in the R source package for more details.
