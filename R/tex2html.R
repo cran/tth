@@ -70,7 +70,7 @@ tth.control <- function(a = FALSE, c = FALSE, d = FALSE, e = 2,
 
 ###**********************************************************
 
-tth <- function(x, ..., fixup = TRUE, Sweave = TRUE)
+tth <- function(x, ..., fixup = TRUE, Sweave = TRUE, mode = NULL)
 {
     ## replace/remove Sweave code environments
     if(Sweave) {
@@ -111,12 +111,14 @@ tth <- function(x, ..., fixup = TRUE, Sweave = TRUE)
         )
         for(i in 1:nrow(tab)) y <- gsub(tab[i,1L], tab[i,2L], y)
     }
+    
+    if(!is.null(mode)) y <- .fix_character_entity_references(y, mode = mode)
 
     return(y)
 }
 
 
-ttm <- function(x, ..., fixup = TRUE, Sweave = TRUE)
+ttm <- function(x, ..., fixup = TRUE, Sweave = TRUE, mode = NULL)
 {
     ## replace/remove Sweave code environments
     if(Sweave) {
@@ -146,13 +148,15 @@ ttm <- function(x, ..., fixup = TRUE, Sweave = TRUE)
             c("\\\\not *<mo>=</mo>",    "<mo>&ne;</mo>"),
             c("\\\\not *<mo>&lt;</mo>", "<mo>&nlt;</mo>"),
             c("\\\\not *<mo>&le;</mo>", "<mo>&nleq;</mo>"),
-            c("\\\\nleq",             "<mo>&nleq;</mo>"),
+            c("\\\\nleq",               "<mo>&nleq;</mo>"),
             c("\\\\not *<mo>&gt;</mo>", "<mo>&ngt;</mo>"),
             c("\\\\not *<mo>&ge;</mo>", "<mo>&ngeq;</mo>"),
-            c("\\\\ngeq",             "<mo>&ngeq;</mo>")
+            c("\\\\ngeq",               "<mo>&ngeq;</mo>")
         )
         for(i in 1:nrow(tab)) y <- gsub(tab[i,1L], tab[i,2L], y)
     }
+
+    if(!is.null(mode)) y <- .fix_character_entity_references(y, mode = mode)
 
     return(y)
 }

@@ -10,8 +10,8 @@
 }
 
 \usage{
-tth(x, \dots, fixup = TRUE, Sweave = TRUE)
-ttm(x, \dots, fixup = TRUE, Sweave = TRUE)
+tth(x, \dots, fixup = TRUE, Sweave = TRUE, mode = NULL)
+ttm(x, \dots, fixup = TRUE, Sweave = TRUE, mode = NULL)
 
 tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
   i = FALSE, j = NULL, L = TRUE, n = NULL, p = NULL, r = TRUE,
@@ -23,6 +23,8 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
     empty lines and by replacing certain math symbols (such as not lower/greater etc.)?}
   \item{Sweave}{logical. Should the Sweave code environments Sinput/Soutput be
     replaced by verabtim (and Schunk deleted) prior to conversion with \code{tth}/\code{ttm}?}
+  \item{mode}{character. If this is set to \code{"hex"}, \code{"dec"}, or \code{"named"},
+    the corresponding mode is enforced for all character entity references. See also the details.}
   \item{\dots}{arguments passed to \code{tth.control}.}
   \item{a}{logical. Attempt automatic picture environment conversion
     using \code{latex2gif}? Default omit.}
@@ -58,14 +60,30 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
     \code{2} (even higher verbosity for debugging).}
 }
 
-\details{ \code{tth} and \code{ttm} are simple R wrapper functions,
+\details{
+  \code{tth} and \code{ttm} are simple R wrapper functions,
   calling command line tools of the same name which either need to be
   provided by the R package \pkg{tth} or be installed on the system (and
   available in the search path). The command line tools have been
   written by Hutchinson (2012) and a detailed manual is available online
   at \url{http://hutchinson.belmont.ma.us/tth/manual.cgi} (which
   actually produces an HTML version of the manual in real time using
-  tth).  }
+  tth).
+
+  By default, the results of \code{tth} and \code{ttm} are processed further
+  to accomodate the \code{Sweave} environments and \code{fixup} certain
+  math symbols. Furthermore, optionally a particular \code{mode} for character
+  entity references (mathematical symbols, greek letters, and other special characters)
+  can be enforced. For example, the greek small letter mu
+  can be represented in \code{"named"} mode (\code{&mgr;} or \code{&mu;}),
+  in \code{"hex"} mode (\code{&#x03BC;}) or \code{"dec"} model (\code{&#956;}).
+  Plain \code{tth} employs \code{"dec"} mode while plain \code{ttm} employs
+  \code{"named"} mode. But setting \code{mode = "hex"} would convert all
+  character entity references to hex mode etc.
+  See \url{http://www.w3.org/TR/xml-entity-names/bycodes.html} for the list of
+  character entity references employed and \url{http://dev.w3.org/html5/html-author/charref}
+  for a somewhat nicer display.
+}
 
 \value{ \code{tth}/\code{ttm} return a character vector with HTML
   code. \code{tth.control} returns a character vector with collapsed
@@ -81,6 +99,14 @@ tex <- c("This is \\\\textbf{bold} and this \\\\textit{italic}.",
   "Points on the unit circle: $x^2 + y^2 = 1$.")
 tth(tex)
 ttm(tex)
+
+h0 <- "$H_0: \\\\mu_0 = 0$"
+tth(h0)
+tth(h0, mode = "hex")
+tth(h0, mode = "named")
+ttm(h0)
+ttm(h0, mode = "hex")
+ttm(h0, mode = "dec")
 }
 
 \keyword{utilities}

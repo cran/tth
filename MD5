@@ -1,0 +1,13 @@
+1f1ccaeaed012699d787db44fa4ec06c *DESCRIPTION
+f61b8f62c8b17b2316c610cb09dd4dec *NAMESPACE
+8739d4a286df2808164fc0d5be1e2c43 *NEWS
+5f1393f92db5ec267de90478bde6f0ae *R/bycodes.R
+26aecc2b20395eaa0082a8b3b4ff05e6 *R/tex2html.R
+7b5382aafb28a78098e59d2ff660f9a3 *README
+c91b5b1174ca176715107b427a35846c *man/tth-package.Rd
+381b5ce8c4e1935fb447bd7f16b047c7 *man/tth.Rd
+7d435a65c6b61b065955270ccee4ca12 *src/Makefile
+0694bb454e7bcb5cbba1c73271c15f2f *src/Makefile.win
+71c637f8c8b51bb3e6c114df834d2eb4 *src/install.libs.R
+51ef0335fc6978726776d9b7421900f1 *src/tth.c
+884032c6fcc54efadf9631e08238c07e *src/ttm.c
