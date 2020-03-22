@@ -1,12 +1,18 @@
-include $(R_HOME)/etc/$(R_ARCH)/Makeconf 
+## WARNING: requires GNU make (allowed on Windows)
+sp =
+sp +=
+sq = $(subst $(sp),\ ,$1)
+include $(call sq,${R_HOME}/etc${R_ARCH}/Makeconf)
+
+CFLAGS = -w
 
 all: tth.exe ttm.exe
 
 tth.exe: tth.c
-	$(CC) $(CFLAGS) -o tth.exe tth.c 
+	$(CC) -w -o tth.exe tth.c 
 
 ttm.exe: ttm.c
-	$(CC) $(CFLAGS) -o ttm.exe ttm.c 
+	$(CC) -w -o ttm.exe ttm.c 
 
 clean:
 	rm -f tth.exe ttm.exe

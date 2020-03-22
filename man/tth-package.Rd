@@ -11,8 +11,7 @@
   compilation and installation on all platforms. It also provides wrappers in
   R to process R character vectors with the command line tools directly
   from the R prompt. A detailed manual for tth/ttm is available online at
-  \url{http://hutchinson.belmont.ma.us/tth/manual.cgi} (which actually
-  produces an HTML version of the manual in real time using tth).
+  \url{http://hutchinson.belmont.ma.us/tth/}.
 }
 
 \references{

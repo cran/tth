@@ -66,9 +66,7 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
   provided by the R package \pkg{tth} or be installed on the system (and
   available in the search path). The command line tools have been
   written by Hutchinson (2012) and a detailed manual is available online
-  at \url{http://hutchinson.belmont.ma.us/tth/manual.cgi} (which
-  actually produces an HTML version of the manual in real time using
-  tth).
+  at \url{http://hutchinson.belmont.ma.us/tth/}.
 
   By default, the results of \code{tth} and \code{ttm} are processed further
   to accomodate the \code{Sweave} environments and \code{fixup} certain
