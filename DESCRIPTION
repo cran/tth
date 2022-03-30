@@ -1,5 +1,5 @@
 Package: tth
-Version: 4.12-0
+Version: 4.12-0-1
 Date: 2020-03-19
 Authors@R: c(person(c("Ian", "H."), "Hutchinson", role = "aut", comment = "author of tth/ttm C sources"),
 	     person("Friedrich", "Leisch", role = c("aut", "cre"), email = "Friedrich.Leisch@R-project.org",
@@ -11,7 +11,7 @@ Depends: R (>= 3.0.0)
 Description: C source code and R wrappers for the tth/ttm TeX-to-HTML/MathML translators.
 License: GPL-2
 NeedsCompilation: yes
-Packaged: 2020-03-19 14:04:18 UTC; leisch
+Packaged: 2022-03-30 15:11:03 UTC; hornik
 Author: Ian H. Hutchinson [aut] (author of tth/ttm C sources),
   Friedrich Leisch [aut, cre] (<https://orcid.org/0000-0001-7278-1983>,
     author of R wrappers to tth/ttm),
@@ -19,4 +19,4 @@ Author: Ian H. Hutchinson [aut] (author of tth/ttm C sources),
     R wrappers to tth/ttm)
 Maintainer: Friedrich Leisch <Friedrich.Leisch@R-project.org>
 Repository: CRAN
-Date/Publication: 2020-03-22 08:10:03 UTC
+Date/Publication: 2022-03-30 15:13:55 UTC

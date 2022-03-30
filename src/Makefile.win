@@ -1,10 +1,6 @@
-## WARNING: requires GNU make (allowed on Windows)
-sp =
-sp +=
-sq = $(subst $(sp),\ ,$1)
-include $(call sq,${R_HOME}/etc${R_ARCH}/Makeconf)
 
 CFLAGS = -w
+CC = `"${R_HOME}/bin/R" CMD config CC`
 
 all: tth.exe ttm.exe
 
