@@ -65,8 +65,8 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
   calling command line tools of the same name which either need to be
   provided by the R package \pkg{tth} or be installed on the system (and
   available in the search path). The command line tools have been
-  written by Hutchinson (2012) and a detailed manual is available online
-  at \url{http://hutchinson.belmont.ma.us/tth/}.
+  written by Hutchinson (2017) and a detailed manual is available online
+  at \url{http://silas.psfc.mit.edu/tth/}.
 
   By default, the results of \code{tth} and \code{ttm} are processed further
   to accomodate the \code{Sweave} environments and \code{fixup} certain
@@ -78,8 +78,9 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
   Plain \code{tth} employs \code{"dec"} mode while plain \code{ttm} employs
   \code{"named"} mode. But setting \code{mode = "hex"} would convert all
   character entity references to hex mode etc.
-  See \url{http://www.w3.org/TR/xml-entity-names/bycodes.html} for the list of
-  character entity references employed and \url{https://dev.w3.org/html5/html-author/charref}
+  See \url{https://www.w3.org/TR/xml-entity-names/bycodes.html} for the list of
+  character entity references employed and
+  \url{https://html.spec.whatwg.org/multipage/named-characters.html}
   for a somewhat nicer display.
 }
 
@@ -88,8 +89,8 @@ tth.control(a = FALSE, c = FALSE, d = FALSE, e = 2, f = NULL, g = FALSE,
   (non-default) control arguments.  }
 
 \references{
-  Hutchinson IH (2012). \emph{TtH: The TeX to HTML Translator}, Version 4.03.
-  \url{http://hutchinson.belmont.ma.us/tth/}
+  Hutchinson IH (2022). \emph{TtH: The TeX to HTML Translator}, Version 4.16.
+  \url{http://silas.psfc.mit.edu/tth/}
 }
 
 \examples{

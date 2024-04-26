@@ -1,22 +1,23 @@
 Package: tth
-Version: 4.12-0-1
-Date: 2020-03-19
+Version: 4.16-0
+Date: 2024-04-26
 Authors@R: c(person(c("Ian", "H."), "Hutchinson", role = "aut", comment = "author of tth/ttm C sources"),
-	     person("Friedrich", "Leisch", role = c("aut", "cre"), email = "Friedrich.Leisch@R-project.org",
-                    comment = c(ORCID = "0000-0001-7278-1983", "author of R wrappers to tth/ttm")),
-	     person("Achim", "Zeileis", role = "aut", email = "Achim.Zeileis@R-project.org",
+	     person("Friedrich", "Leisch", role = "aut", email = "Friedrich.Leisch@R-project.org",
+                    comment = c(ORCID = "0000-0001-7278-1983", "author of R wrappers to tth/ttm, maintainer 2012-2024")),
+	     person("Achim", "Zeileis", role = c("aut", "cre"), email = "Achim.Zeileis@R-project.org",
                     comment = c(ORCID = "0000-0003-0918-3766", "author of R wrappers to tth/ttm")))
 Title: TeX-to-HTML/MathML Translators TtH/TtM
 Depends: R (>= 3.0.0)
 Description: C source code and R wrappers for the tth/ttm TeX-to-HTML/MathML translators.
 License: GPL-2
+SystemRequirements: USE_C17
 NeedsCompilation: yes
-Packaged: 2022-03-30 15:11:03 UTC; hornik
+Packaged: 2024-04-26 16:57:35 UTC; zeileis
 Author: Ian H. Hutchinson [aut] (author of tth/ttm C sources),
-  Friedrich Leisch [aut, cre] (<https://orcid.org/0000-0001-7278-1983>,
-    author of R wrappers to tth/ttm),
-  Achim Zeileis [aut] (<https://orcid.org/0000-0003-0918-3766>, author of
-    R wrappers to tth/ttm)
-Maintainer: Friedrich Leisch <Friedrich.Leisch@R-project.org>
+  Friedrich Leisch [aut] (<https://orcid.org/0000-0001-7278-1983>, author
+    of R wrappers to tth/ttm, maintainer 2012-2024),
+  Achim Zeileis [aut, cre] (<https://orcid.org/0000-0003-0918-3766>,
+    author of R wrappers to tth/ttm)
+Maintainer: Achim Zeileis <Achim.Zeileis@R-project.org>
 Repository: CRAN
-Date/Publication: 2022-03-30 15:13:55 UTC
+Date/Publication: 2024-04-26 17:19:00 UTC
